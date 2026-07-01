@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Abdul Rafeh Site Editor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/editor.css" />
+</head>
+<body>
+  <aside class="editor-sidebar">
+    <div>
+      <strong>Abdul Rafeh</strong>
+      <span>visual site editor</span>
+    </div>
+    <nav>
+      <button class="tab active" data-tab="content">Content</button>
+      <button class="tab" data-tab="projects">Projects</button>
+      <button class="tab" data-tab="design">Design</button>
+      <button class="tab" data-tab="export">Save / Export</button>
+    </nav>
+    <div class="editor-actions">
+      <button id="saveLocal" class="primary">Save preview</button>
+      <div class="undo-redo-row">
+        <button id="undoChange" type="button">Undo</button>
+        <button id="redoChange" type="button">Redo</button>
+      </div>
+      <button id="downloadConfig">Download config</button>
+      <label class="import-config-button">
+        Import config
+        <input id="importConfig" type="file" accept=".js,.json,application/javascript,application/json">
+      </label>
+      <button id="resetLocal">Reset local</button>
+    </div>
+    <p class="hint">GitHub Pages cannot save to the server by itself. Save locally for preview, then download <b>site-config.js</b> and upload it to GitHub.</p>
+  </aside>
+
+  <main class="editor-main">
+    <header class="editor-top">
+      <div>
+        <p>Editor</p>
+        <h1>Canva-style controls for your portfolio.</h1>
+      </div>
+      <a href="index.html" target="_blank">Open site ↗</a>
+    </header>
+
+    <section class="panel tab-panel active" id="content">
+      <h2>Website text</h2>
+      <div class="grid two">
+        <label>Brand name <input data-path="brand.name" /></label>
+        <label>Email <input data-path="brand.email" /></label>
+        <label>Instagram URL <input data-path="brand.instagram" /></label>
+        <label>Instagram label <input data-path="brand.instagramLabel" /></label>
+        <label>ArtStation URL <input data-path="brand.artstation" /></label>
+        <label>ArtStation label <input data-path="brand.artstationLabel" /></label>
+      </div>
+
+      <h3>Hero</h3>
+      <div class="grid two">
+        <label>Hero topline <textarea data-path="hero.topline" data-lines="true"></textarea></label>
+        <label>Hero title <textarea data-path="hero.title" data-lines="true"></textarea></label>
+        <label>Hero description <textarea data-path="hero.description" data-lines="true"></textarea></label>
+        <label>Hero services <textarea data-path="hero.services" data-lines="true"></textarea></label>
+        <label>Location <input data-path="hero.location" /></label>
+        <label>Scroll cue <input data-path="hero.scrollCue" /></label>
+      </div>
+
+      <h3>Intro + Work</h3>
+      <div class="grid two">
+        <label>Marquee words <textarea data-path="intro.marquee" data-lines="true"></textarea></label>
+        <label>Intro text <textarea data-path="intro.text" data-lines="true"></textarea></label>
+        <label>Work eyebrow <input data-path="work.eyebrow" /></label>
+        <label>Work heading <textarea data-path="work.heading" data-lines="true"></textarea></label>
+      </div>
+
+      <h3>Services</h3>
+      <div class="grid two">
+        <label>Services eyebrow <input data-path="services.eyebrow" /></label>
+        <label>Services heading <textarea data-path="services.heading" data-lines="true"></textarea></label>
+      </div>
+      <div id="serviceEditor" class="stack"></div>
+      <button id="addService">Add service</button>
+
+      <h3>About + Contact</h3>
+      <div class="grid two">
+        <label>About eyebrow <input data-path="about.eyebrow" /></label>
+        <label>About heading <textarea data-path="about.heading" data-lines="true"></textarea></label>
+        <label>About copy <textarea data-path="about.copy" data-lines="true"></textarea></label>
+        <label>About portrait path <input data-path="about.portrait.path" /></label>
+        <label>Upload about image
+          <input id="aboutPortraitUpload" type="file" accept="image/*">
+          <span class="asset-note">Sets the path to assets/images/your-file-name and updates the preview. Upload the image to assets/images in GitHub like project images.</span>
+        </label>
+        <label>Contact eyebrow <input data-path="contact.eyebrow" /></label>
+        <label>Contact heading <textarea data-path="contact.heading" data-lines="true"></textarea></label>
+        <label>Contact note <textarea data-path="contact.note" data-lines="true"></textarea></label>
+      </div>
+    </section>
+
+    <section class="panel tab-panel" id="projects">
+      <div class="panel-head">
+        <div>
+          <h2>Projects</h2>
+          <p>Add, remove, reorder, edit text, and set image/video paths.</p>
+        </div>
+        <button id="addProject" class="primary">Add project</button>
+      </div>
+      <div id="projectEditor" class="stack"></div>
+    </section>
+
+    <section class="panel tab-panel" id="design">
+      <h2>Design controls</h2>
+
+      <h3>Color presets</h3>
+      <div class="preset-row">
+        <button data-preset="pureBlack">Pure black</button>
+        <button data-preset="warmBlack">Warm black</button>
+        <button data-preset="whiteEditorial">White editorial</button>
+        <button data-preset="cream">Cream</button>
+      </div>
+
+      <h3>Colors</h3>
+      <div class="grid four">
+        <label>Dark BG <input type="color" data-path="design.colors.dark.bg" /></label>
+        <label>Dark Text <input type="color" data-path="design.colors.dark.text" /></label>
+        <label>Dark Muted <input type="color" data-path="design.colors.dark.muted" /></label>
+        <label>Light BG <input type="color" data-path="design.colors.light.bg" /></label>
+        <label>Light Text <input type="color" data-path="design.colors.light.text" /></label>
+        <label>Light Muted <input type="color" data-path="design.colors.light.muted" /></label>
+      </div>
+
+      <h3>Layout</h3>
+      <div class="grid two">
+        <label>Project layout
+          <select data-path="design.layout.projectLayout">
+            <option value="list">Editorial list</option>
+            <option value="compact">Compact list</option>
+            <option value="grid">Grid cards</option>
+          </select>
+        </label>
+        <label>Image/video captions
+          <select data-path="design.media.showCaptions" data-boolean="true">
+            <option value="true">Show captions</option>
+            <option value="false">Hide captions</option>
+          </select>
+        </label>
+      </div>
+
+      <h3>Typography</h3>
+      <div class="grid two">
+        <label>Hero size <input data-path="design.typography.heroSize" /></label>
+        <label>Hero line height <input data-path="design.typography.heroLineHeight" /></label>
+        <label>Hero letter spacing <input data-path="design.typography.heroLetterSpacing" /></label>
+        <label>Heading size <input data-path="design.typography.headingSize" /></label>
+        <label>Heading line height <input data-path="design.typography.headingLineHeight" /></label>
+        <label>Heading letter spacing <input data-path="design.typography.headingLetterSpacing" /></label>
+        <label>Project title size <input data-path="design.typography.projectTitleSize" /></label>
+        <label>Project letter spacing <input data-path="design.typography.projectLetterSpacing" /></label>
+        <label>Body size <input data-path="design.typography.bodySize" /></label>
+        <label>Body line height <input data-path="design.typography.bodyLineHeight" /></label>
+      </div>
+
+      <h3>Spacing + animation</h3>
+      <div class="grid two">
+        <label>Section padding top <input data-path="design.spacing.sectionPaddingTop" /></label>
+        <label>Section padding bottom <input data-path="design.spacing.sectionPaddingBottom" /></label>
+        <label>Page side padding <input data-path="design.spacing.pagePadding" /></label>
+        <label>Line animation duration <input data-path="design.animations.lineDuration" /></label>
+        <label>Stack animation duration <input data-path="design.animations.stackDuration" /></label>
+        <label>Line stagger delay <input data-path="design.animations.lineDelay" /></label>
+      </div>
+    </section>
+
+    <section class="panel tab-panel" id="export">
+      <h2>Save / Export</h2>
+      <p class="big-note">For permanent changes on GitHub, download the config and replace:</p>
+      <p>You can also import your old <b>site-config.js</b> here later, continue editing, then export it again.</p>
+      <code>js/site-config.js</code>
+      <div class="export-buttons">
+        <button id="saveLocal2" class="primary">Save preview in this browser</button>
+        <button id="downloadConfig2">Download site-config.js</button>
+        <button id="copyConfig">Copy config code</button>
+        <label class="import-config-button">
+          Import existing config
+          <input id="importConfig2" type="file" accept=".js,.json,application/javascript,application/json">
+        </label>
+      </div>
+      <h3>Media upload list</h3>
+      <p>These are the image/video paths your config currently references. Upload matching files to these folders in GitHub.</p>
+      <pre id="assetList"></pre>
+      <h3>Generated config</h3>
+      <textarea id="configOutput" spellcheck="false"></textarea>
+    </section>
+
+    <section class="preview-panel">
+      <div class="preview-bar">
+        <span>Live preview</span>
+        <button id="refreshPreview">Refresh</button>
+      </div>
+      <iframe id="previewFrame" src="index.html"></iframe>
+    </section>
+  </main>
+
+  <script src="js/site-config.js"></script>
+  <script src="js/editor.js"></script>
+</body>
+</html>

@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Abdul Rafeh creates cinematic architectural imagery, still renders, and videos for architects, developers, and design-led brands." />
+  <meta name="theme-color" content="#050505" />
+  <title>Abdul Rafeh — Architectural Visualization</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader-word">
+      <span>ABDUL</span>
+      <span>RAFEH</span>
+    </div>
+    <p>architectural visualization</p>
+  </div>
+
+  <header class="site-header">
+    <a class="brand magnet" href="#home" aria-label="Abdul Rafeh home">ABDUL RAFEH</a>
+    <nav class="nav-links" aria-label="Primary navigation">
+      <a class="magnet" href="#home">/Home</a>
+      <a class="magnet" href="#work">/Work</a>
+      <a class="magnet" href="#services">/Capabilities</a>
+      <a class="magnet" href="#about">/About</a>
+      <a class="magnet" href="#contact">/Contact</a>
+    </nav>
+    <div class="header-actions">
+      <button class="theme-toggle magnet" id="themeToggle" type="button" aria-label="Switch theme">
+        <span class="theme-toggle-icon" aria-hidden="true"></span>
+        <span class="theme-toggle-text">Light</span>
+      </button>
+      <a class="contact-btn magnet" href="mailto:hello@rafeh3d.com">Contact Now ↗</a>
+      <button class="menu-btn" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false">Menu</button>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <a href="#home">Home</a>
+    <a href="#work">Work</a>
+    <a href="#services">Capabilities</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+    <a href="mailto:hello@rafeh3d.com">Email ↗</a>
+  </div>
+
+  <main>
+    <section class="hero section-panel observe" id="home" data-section="01">
+      <div class="hero-grid-wrap" aria-hidden="true">
+        <div class="hero-canvas-wrap">
+          <canvas id="heroGridCanvas"></canvas>
+        </div>
+        <div class="hero-glow"></div>
+      </div>
+
+      <div class="hero-topline line-reveal" data-stagger="0.03">
+        <span class="line"><span>Independent 3D artist</span></span>
+        <span class="line muted-line"><span>Still renders / cinematic videos</span></span>
+      </div>
+
+      <div class="hero-layout">
+        <div class="hero-copy">
+          <h1 class="hero-title line-reveal" aria-label="Abdul Rafeh" data-stagger="0.10">
+            <span class="line"><span>ABDUL</span></span>
+            <span class="line"><span>RAFEH</span></span>
+          </h1>
+          <p class="hero-description line-reveal" data-stagger="0.08">
+            <span class="line"><span>Cinematic architectural imagery</span></span>
+            <span class="line"><span>for architects, developers, and</span></span>
+            <span class="line"><span>design-led brands.</span></span>
+          </p>
+        </div>
+
+        <aside class="hero-aside reveal-stack">
+          <div class="aside-block">
+            <span>/Services</span>
+            <ul>
+              <li>Still renders</li>
+              <li>Cinematic videos</li>
+              <li>Interior visuals</li>
+            </ul>
+          </div>
+          <div class="aside-block">
+            <span>/Location</span>
+            <p>Karachi, PK</p>
+            <strong id="localTime">--:--</strong>
+          </div>
+        </aside>
+      </div>
+
+      <div class="scroll-cue line-reveal" data-stagger="0.06">
+        <span class="scroll-line" aria-hidden="true"></span>
+        <span class="line"><span>Scroll to explore</span></span>
+      </div>
+    </section>
+
+    <section class="intro-strip section-panel observe" aria-label="Studio intro">
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee-track">
+          <span>Still Renders</span><span>Cinematic Videos</span><span>Atmospheric Spaces</span><span>Visual Storytelling</span>
+          <span>Still Renders</span><span>Cinematic Videos</span><span>Atmospheric Spaces</span><span>Visual Storytelling</span>
+        </div>
+      </div>
+      <p class="intro-text line-reveal" data-stagger="0.07">
+        <span class="line"><span>A portfolio for architectural imagery that feels quiet,</span></span>
+        <span class="line"><span>premium, cinematic, and intentional from the first frame.</span></span>
+      </p>
+    </section>
+
+    <section class="work section-panel observe" id="work" data-section="02">
+      <div class="section-heading">
+        <p class="eyebrow line-reveal"><span class="line"><span>/Selected Work</span></span></p>
+        <h2 class="line-reveal" data-stagger="0.07">
+          <span class="line"><span>Work made for</span></span>
+          <span class="line"><span>atmosphere, scale,</span></span>
+          <span class="line"><span>and presentation.</span></span>
+        </h2>
+      </div>
+
+      <div class="project-list" id="projectList" aria-label="Selected projects">
+        <article class="project-card" data-project="luxury-villa">
+          <button class="project-trigger magnet" type="button" aria-expanded="true">
+            <span class="project-number">01</span>
+            <span class="project-title">Luxury Villa</span>
+            <span class="project-type">Still Renders / Video</span>
+            <span class="project-arrow">↗</span>
+          </button>
+          <div class="project-panel">
+            <div class="project-media-grid">
+              <figure class="media-slot image-slot wide" data-label="assets/images/luxury-villa-01.jpg">
+                <img src="assets/images/luxury-villa-01.jpg" alt="Luxury villa render" loading="lazy">
+                <figcaption>Image Placeholder / luxury-villa-01.jpg</figcaption>
+              </figure>
+              <figure class="media-slot image-slot" data-label="assets/images/luxury-villa-02.jpg">
+                <img src="assets/images/luxury-villa-02.jpg" alt="Luxury villa detail" loading="lazy">
+                <figcaption>Image Placeholder / luxury-villa-02.jpg</figcaption>
+              </figure>
+              <figure class="media-slot video-slot" data-label="assets/videos/luxury-villa.mp4">
+                <video src="assets/videos/luxury-villa.mp4" muted loop playsinline preload="metadata"></video>
+                <figcaption>Video Placeholder / luxury-villa.mp4</figcaption>
+              </figure>
+            </div>
+            <div class="project-copy line-reveal" data-stagger="0.05">
+              <span class="line"><span>Photorealistic residential imagery shaped around</span></span>
+              <span class="line"><span>warm evening light, premium materiality,</span></span>
+              <span class="line"><span>and cinematic architectural presentation.</span></span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card" data-project="lakeside-residence">
+          <button class="project-trigger magnet" type="button" aria-expanded="false">
+            <span class="project-number">02</span>
+            <span class="project-title">Lakeside Residence</span>
+            <span class="project-type">Still Renders / Video</span>
+            <span class="project-arrow">↗</span>
+          </button>
+          <div class="project-panel">
+            <div class="project-media-grid">
+              <figure class="media-slot image-slot wide" data-label="assets/images/lakeside-residence-01.jpg">
+                <img src="assets/images/lakeside-residence-01.jpg" alt="Lakeside residence render" loading="lazy">
+                <figcaption>Image Placeholder / lakeside-residence-01.jpg</figcaption>
+              </figure>
+              <figure class="media-slot image-slot" data-label="assets/images/lakeside-residence-02.jpg">
+                <img src="assets/images/lakeside-residence-02.jpg" alt="Lakeside residence interior" loading="lazy">
+                <figcaption>Image Placeholder / lakeside-residence-02.jpg</figcaption>
+              </figure>
+              <figure class="media-slot video-slot" data-label="assets/videos/lakeside-residence.mp4">
+                <video src="assets/videos/lakeside-residence.mp4" muted loop playsinline preload="metadata"></video>
+                <figcaption>Video Placeholder / lakeside-residence.mp4</figcaption>
+              </figure>
+            </div>
+            <div class="project-copy line-reveal" data-stagger="0.05">
+              <span class="line"><span>A quiet forest retreat concept built around glass,</span></span>
+              <span class="line"><span>timber, lake reflections, warm interiors,</span></span>
+              <span class="line"><span>and calm luxury atmosphere.</span></span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card" data-project="interior-collection">
+          <button class="project-trigger magnet" type="button" aria-expanded="false">
+            <span class="project-number">03</span>
+            <span class="project-title">Interior Collection</span>
+            <span class="project-type">Still Renders / Video</span>
+            <span class="project-arrow">↗</span>
+          </button>
+          <div class="project-panel">
+            <div class="project-media-grid">
+              <figure class="media-slot image-slot" data-label="assets/images/interior-collection-01.jpg">
+                <img src="assets/images/interior-collection-01.jpg" alt="Interior collection render" loading="lazy">
+                <figcaption>Image Placeholder / interior-collection-01.jpg</figcaption>
+              </figure>
+              <figure class="media-slot image-slot" data-label="assets/images/interior-collection-02.jpg">
+                <img src="assets/images/interior-collection-02.jpg" alt="Interior collection render" loading="lazy">
+                <figcaption>Image Placeholder / interior-collection-02.jpg</figcaption>
+              </figure>
+              <figure class="media-slot video-slot wide" data-label="assets/videos/interior-collection.mp4">
+                <video src="assets/videos/interior-collection.mp4" muted loop playsinline preload="metadata"></video>
+                <figcaption>Video Placeholder / interior-collection.mp4</figcaption>
+              </figure>
+            </div>
+            <div class="project-copy line-reveal" data-stagger="0.05">
+              <span class="line"><span>Magazine-style interiors with soft shadows,</span></span>
+              <span class="line"><span>marble, timber, warm lighting, and a refined</span></span>
+              <span class="line"><span>architectural design language.</span></span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card" data-project="cinematic-film">
+          <button class="project-trigger magnet" type="button" aria-expanded="false">
+            <span class="project-number">04</span>
+            <span class="project-title">Cinematic Film</span>
+            <span class="project-type">Video</span>
+            <span class="project-arrow">↗</span>
+          </button>
+          <div class="project-panel">
+            <div class="project-media-grid">
+              <figure class="media-slot video-slot wide" data-label="assets/videos/cinematic-film.mp4">
+                <video src="assets/videos/cinematic-film.mp4" muted loop playsinline preload="metadata"></video>
+                <figcaption>Video Placeholder / cinematic-film.mp4</figcaption>
+              </figure>
+              <figure class="media-slot image-slot" data-label="assets/images/cinematic-film-01.jpg">
+                <img src="assets/images/cinematic-film-01.jpg" alt="Cinematic film still" loading="lazy">
+                <figcaption>Image Placeholder / cinematic-film-01.jpg</figcaption>
+              </figure>
+              <figure class="media-slot image-slot" data-label="assets/images/cinematic-film-02.jpg">
+                <img src="assets/images/cinematic-film-02.jpg" alt="Cinematic film still" loading="lazy">
+                <figcaption>Image Placeholder / cinematic-film-02.jpg</figcaption>
+              </figure>
+            </div>
+            <div class="project-copy line-reveal" data-stagger="0.05">
+              <span class="line"><span>Cinematic sequences that use camera movement,</span></span>
+              <span class="line"><span>atmosphere, and lighting to make spaces feel</span></span>
+              <span class="line"><span>designed, emotional, and memorable.</span></span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card" data-project="japanese-street">
+          <button class="project-trigger magnet" type="button" aria-expanded="false">
+            <span class="project-number">05</span>
+            <span class="project-title">Japanese Street</span>
+            <span class="project-type">Still Renders / Video</span>
+            <span class="project-arrow">↗</span>
+          </button>
+          <div class="project-panel">
+            <div class="project-media-grid">
+              <figure class="media-slot image-slot wide" data-label="assets/images/japanese-street-01.jpg">
+                <img src="assets/images/japanese-street-01.jpg" alt="Japanese street render" loading="lazy">
+                <figcaption>Image Placeholder / japanese-street-01.jpg</figcaption>
+              </figure>
+              <figure class="media-slot image-slot" data-label="assets/images/japanese-street-02.jpg">
+                <img src="assets/images/japanese-street-02.jpg" alt="Japanese street detail" loading="lazy">
+                <figcaption>Image Placeholder / japanese-street-02.jpg</figcaption>
+              </figure>
+              <figure class="media-slot video-slot" data-label="assets/videos/japanese-street.mp4">
+                <video src="assets/videos/japanese-street.mp4" muted loop playsinline preload="metadata"></video>
+                <figcaption>Video Placeholder / japanese-street.mp4</figcaption>
+              </figure>
+            </div>
+            <div class="project-copy line-reveal" data-stagger="0.05">
+              <span class="line"><span>An atmospheric environment study built for mood,</span></span>
+              <span class="line"><span>lighting, wet surfaces, signage, and cinematic</span></span>
+              <span class="line"><span>urban storytelling.</span></span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card" data-project="product-visualization">
+          <button class="project-trigger magnet" type="button" aria-expanded="false">
+            <span class="project-number">06</span>
+            <span class="project-title">Product Visualization</span>
+            <span class="project-type">Still Renders / Video</span>
+            <span class="project-arrow">↗</span>
+          </button>
+          <div class="project-panel">
+            <div class="project-media-grid">
+              <figure class="media-slot image-slot" data-label="assets/images/product-visualization-01.jpg">
+                <img src="assets/images/product-visualization-01.jpg" alt="Product visualization render" loading="lazy">
+                <figcaption>Image Placeholder / product-visualization-01.jpg</figcaption>
+              </figure>
+              <figure class="media-slot image-slot" data-label="assets/images/product-visualization-02.jpg">
+                <img src="assets/images/product-visualization-02.jpg" alt="Product visualization render" loading="lazy">
+                <figcaption>Image Placeholder / product-visualization-02.jpg</figcaption>
+              </figure>
+              <figure class="media-slot video-slot wide" data-label="assets/videos/product-visualization.mp4">
+                <video src="assets/videos/product-visualization.mp4" muted loop playsinline preload="metadata"></video>
+                <figcaption>Video Placeholder / product-visualization.mp4</figcaption>
+              </figure>
+            </div>
+            <div class="project-copy line-reveal" data-stagger="0.05">
+              <span class="line"><span>Premium product visuals with controlled lighting,</span></span>
+              <span class="line"><span>clean materials, brand-focused compositions,</span></span>
+              <span class="line"><span>and short cinematic motion pieces.</span></span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="services section-panel observe" id="services" data-section="03">
+      <div class="section-heading compact">
+        <p class="eyebrow line-reveal"><span class="line"><span>/Capabilities</span></span></p>
+        <h2 class="line-reveal" data-stagger="0.07">
+          <span class="line"><span>Visual packages for</span></span>
+          <span class="line"><span>architecture and</span></span>
+          <span class="line"><span>design-led brands.</span></span>
+        </h2>
+      </div>
+      <div class="service-list reveal-stack">
+        <article class="service-row">
+          <span>01</span>
+          <h3>Exterior stills</h3>
+          <p>Hero images, atmospheric views, and marketable project visuals for villas, houses, and development concepts.</p>
+        </article>
+        <article class="service-row">
+          <span>02</span>
+          <h3>Interior imagery</h3>
+          <p>Premium interior visuals focused on material realism, lighting mood, and architectural composition.</p>
+        </article>
+        <article class="service-row">
+          <span>03</span>
+          <h3>Cinematic videos</h3>
+          <p>Short architectural sequences, reveal shots, motion loops, and story-driven visual moments.</p>
+        </article>
+        <article class="service-row">
+          <span>04</span>
+          <h3>Presentation systems</h3>
+          <p>Clean visual sets made for websites, pitch decks, social media, and real estate marketing campaigns.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="about section-panel observe" id="about" data-section="04">
+      <div class="about-grid">
+        <div class="about-heading">
+          <p class="eyebrow line-reveal"><span class="line"><span>/About</span></span></p>
+          <h2 class="line-reveal" data-stagger="0.08">
+            <span class="line"><span>Quiet visuals.</span></span>
+            <span class="line"><span>Strong mood.</span></span>
+            <span class="line"><span>Premium framing.</span></span>
+          </h2>
+        </div>
+        <div class="about-copy line-reveal" data-stagger="0.07">
+          <span class="line"><span>Abdul Rafeh creates cinematic architectural imagery for architects, developers,</span></span>
+          <span class="line"><span>and design-led brands. The work focuses on atmosphere, lighting, material realism,</span></span>
+          <span class="line"><span>and visual presentation that helps a project feel considered before it is built.</span></span>
+          <span class="line"><span>Across still renders and cinematic videos, each scene is shaped to feel clear,</span></span>
+          <span class="line"><span>editorial, and emotionally memorable.</span></span>
+        </div>
+        <figure class="about-portrait media-slot image-slot" data-label="assets/images/about-portrait.jpg">
+          <img src="assets/images/about-portrait.jpg" alt="Abdul Rafeh portrait" loading="lazy">
+          <figcaption>Image Placeholder / about-portrait.jpg</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="contact section-panel observe" id="contact" data-section="05">
+      <div class="contact-bg-grid" aria-hidden="true"></div>
+      <div class="contact-inner">
+        <div class="contact-left">
+          <p class="eyebrow line-reveal"><span class="line"><span>/Contact</span></span></p>
+          <h2 class="contact-title line-reveal" data-stagger="0.08">
+            <span class="line"><span>Have a project</span></span>
+            <span class="line"><span>in mind?</span></span>
+          </h2>
+          <p class="contact-note line-reveal" data-stagger="0.06">
+            <span class="line"><span>For villas, interiors, product visuals, cinematic sequences,</span></span>
+            <span class="line"><span>or full visual packages, send over the idea and references.</span></span>
+          </p>
+        </div>
+
+        <div class="contact-right reveal-stack">
+          <a class="email-card magnet" href="mailto:hello@rafeh3d.com">
+            <span>Email</span>
+            <strong>hello@rafeh3d.com</strong>
+            <em>Start a project ↗</em>
+          </a>
+          <div class="social-grid">
+            <a class="social-card magnet" href="https://www.instagram.com/rafeh51_/" target="_blank" rel="noreferrer">
+              <span>Instagram</span>
+              <strong>@rafeh51_ ↗</strong>
+            </a>
+            <a class="social-card magnet" href="https://rafeh.artstation.com" target="_blank" rel="noreferrer">
+              <span>ArtStation</span>
+              <strong>Portfolio ↗</strong>
+            </a>
+          </div>
+        </div>
+      </div>
+      <footer class="footer reveal-stack">
+        <span>© <span id="year"></span> Abdul Rafeh. All rights reserved.</span>
+        <a class="back-top magnet" href="#home">↑ Back to Top</a>
+      </footer>
+    </section>
+  </main>
+
+  <div class="page-dots" aria-label="Section navigation">
+    <a href="#home" aria-label="Home" class="active"></a>
+    <a href="#work" aria-label="Work"></a>
+    <a href="#services" aria-label="Services"></a>
+    <a href="#about" aria-label="About"></a>
+    <a href="#contact" aria-label="Contact"></a>
+  </div>
+
+  <script src="js/site-config.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
