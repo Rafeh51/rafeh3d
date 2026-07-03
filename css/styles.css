@@ -150,40 +150,6 @@ video {
   transform: translate(0, 0);
 }
 
-.loader {
-  position: fixed;
-  inset: 0;
-  z-index: 999;
-  display: grid;
-  place-items: center;
-  gap: 18px;
-  background: var(--bg);
-  color: var(--text);
-  transition: opacity .75s var(--ease), visibility .75s var(--ease), transform .75s var(--ease);
-}
-
-.loader.hidden {
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(-20px);
-}
-
-.loader-word {
-  display: grid;
-  text-align: center;
-  line-height: .78;
-  font-size: clamp(56px, 13vw, 172px);
-  font-weight: 900;
-  letter-spacing: -.1em;
-}
-
-.loader p {
-  color: var(--muted);
-  text-transform: uppercase;
-  letter-spacing: .18em;
-  font-size: 11px;
-}
-
 .site-header {
   position: fixed;
   top: 14px;
