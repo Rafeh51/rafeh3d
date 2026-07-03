@@ -407,10 +407,6 @@ themeToggle?.addEventListener('click', () => {
   setTheme(current === 'light' ? 'dark' : 'light');
 });
 
-window.addEventListener('load', () => {
-  setTimeout(() => loader?.classList.add('hidden'), 520);
-});
-
 function updateKarachiTime() {
   if (!localTime) return;
   const formatter = new Intl.DateTimeFormat('en-US', {
